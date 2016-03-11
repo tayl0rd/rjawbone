@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'rjawbone'
 require 'webmock/rspec'
 require 'vcr'
@@ -8,3 +11,4 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
+WebMock.disable_net_connect!(allow: 'codeclimate.com')

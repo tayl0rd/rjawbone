@@ -16,14 +16,16 @@ module Rjawbone
     attr_accessor :configuration
   end
 
+  def self.configuration
+    @configuration ||= Rjawbone::Configuration.new
+  end
+
   def self.configure
-    self.configuration = Configuration.new
-    yield configuration
+    yield configuration if block_given?
   end
 
-  class ConfigurationNotImplemented < StandardError
-  end
+  class ConfigurationNotImplemented < StandardError; end
 
-  class BadToken < StandardError
-  end
+  class BadToken < StandardError; end
+
 end

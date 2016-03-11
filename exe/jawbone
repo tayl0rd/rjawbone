@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'rjawbone'
+
+Rjawbone::CLI.run
+

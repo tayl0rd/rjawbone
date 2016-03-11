@@ -25,5 +25,13 @@ module Rjawbone
       klass.new(response)
     end
 
+    def build_endpoint(base, params)
+      if params && !params.empty?
+        query_params = URI.encode_www_form(params)
+        base += "?#{query_params}"
+      end
+      base
+    end
+
   end
 end

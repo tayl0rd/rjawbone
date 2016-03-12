@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer aV1SI82xvTrYuTVFgSrOO5ar7u2jEPq5XU9gipw4U0JC7LrLTyKlEd0zz6Po2TuA2LgcaBGWgoR78thyDMNYJFECdgRlo_GULMgGZS0EumxrKbZFiOmnmAPChBPDZ5JP
+      - Bearer <TOKEN>
       User-Agent:
       - Ruby
   response:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 12 Mar 2016 13:44:26 GMT
+      - Sat, 12 Mar 2016 14:02:50 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -33,7 +33,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - aid=M35-P8lJr6fZPVXMXQzimsaZoB33nGzJoXmfe_E-kBf4h6g2bIaqxoIrmz7OOzW3-7SJ23LTJjU;
+      - aid=M35-P8lJr6fZPVXMXQzimsaZoB33nGzJoXmfe_E-kBf4h6g2bIaqxoIrmz7OOzW3dQkqtypcILE;
         Domain=jawbone.com; expires=Sat, 06 Mar 2021 00:00:00; Path=/
       Content-Encoding:
       - gzip
@@ -44,20 +44,20 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIADod5FYC/52UW2+bMBTHv0rEcxtsY2yzt0nZtHSXbnlZlSpCJHjEC7di
-        0y2J+O6zDemAJOq0N/6c2+8cH/voZFxFzpvJ0aklr8LfItbCmcl6GUDv+f5u
-        NxeLO5HS+cPTW+dmot2ljBJunO4/mh+bIjYKAaCFEpkREPuUBgAR0uifcdRV
-        EIpnUn89Hq1jWJfaxONBgPbvGLJFtd3vHr7ffv2czJ7yH9Xids6WvD68/7aY
-        beAHx9ZTqWVBNx5CE6l4Kc1/mUel3BYqFFkH6+Z1nHDXape7tiCCBFD3tTou
-        2sqfNVgm6y94WuaJ0/UZbirewye+DzB+sRVZmfKelTECkBmGHrdIpZ1HtFHi
-        mYenoRHom/CDHdHjIOe7uipK7n4q8rjIndXKtGh6Db0oM6Far7MqjKO9UQGA
-        U8ZYQHxPG34VmqbOlbaAVqZFnnB5+qEDz4PWSbiJ0qIS3NBAH0yN67aoq3Qf
-        qkJFXQsI6Bl6EAJmZSykivJNuwOA2qBRlxCb/P3kEFs/kY88KTED62BDEacv
-        JorZaQLWEcGe4zCL71Gzgy+cdMyJvAuUYIiILgKCK3Sgx+ZdJwMDLjDmAq9j
-        wf/G+leqYEyFMbnAhSkaknne5SP1/Gt0BOIen0+Cq4T6pWmadpF7nWl1PgZZ
-        55WQJ9VfTkbbPtTBPA7D63VWuV2jEbjJAhgZnQgjU4SojzAhZkV39nZOdTVD
-        w42XDrYXHGEICYEBZqte40g/Y92d/Zv10ig9BljboeTqdG7mObUTao/P9Lcv
-        7fOXFbqNxlYSB8veNH8AnuMI9vwFAAA=
+        H4sIAIoh5FYC/52UW2/bIBSA/0rl5zYGjIHsbVI2Ld2lW15WpYosx2YOi281
+        OFsS+b8PsN05TqJOe+Nc+c45cI5OxlXovLk5OrXkVfBbxFpwZrJeTqG3e7jf
+        zsXiXqR0/vj81rm90e5Shgk3Tg8fjSIqYiMhALSgRGYEiH1KdTwFjVbGYXeD
+        UDyT+vR0tI5BVGRlyhWPuxDCGAFIR3QU2aLa7LeP3+++fk5mz/mPanE3Z0te
+        H95/W8wi+MGxN6rU0qBbD6EbqXgprX5fWnVW7LjTkQVRxcPBdb4PMO5tdRkP
+        bC29gdftEam0/GGkxI4HfZEE+ib4YEt6Osn4rq6Kkrufijwucme10ipLFnhh
+        ZkK1vM6qIA73RpoCOGGMTYnvacOvQjemzpW2gFZMizzhslfowPOgdRJEYVpU
+        ghsa6IOJcd0UdZXuA1WosCsBAUiAByFgVoyFVGEetTMD1AaNqoTY5B8mh9j6
+        iXzkSYmZXQcbiDh9MVHM+g5YRwQHjqdZfI+aN/PCScecyLtACU4R0UVAcIUO
+        DNi862TghAuMucDrWPC/sf6Vajqmwphc4MIUnZJ53uWRev41OgLxgM8n06uE
+        ejM0TfuQB5Vp6bwNss4rIXtp+DgZbetQB/OpT7/X2c3tMxqBmyyAkdFEGJkg
+        RH2ECTFPdGt/50TfZmi48dLB9oMjDCEhcIrZalA40kun+7N/s15qpccAayuU
+        XPVzMxvHdqgdn7HnYSk3hUbOui3r5nWccNfKLnftckLan7qvrUcXbeTPGiyT
+        9Rc8KfPEaSy5ONheNM0fIUVq2/wFAAA=
     http_version: 
-  recorded_at: Sat, 12 Mar 2016 13:44:26 GMT
+  recorded_at: Sat, 12 Mar 2016 14:02:50 GMT
 recorded_with: VCR 3.0.1

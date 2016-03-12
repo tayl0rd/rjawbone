@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://jawbone.com/nudge/api/v.1.1/users/@me/moves?date=20160311
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer aV1SI82xvTrYuTVFgSrOO5ar7u2jEPq5XU9gipw4U0JC7LrLTyKlEd0zz6Po2TuA2LgcaBGWgoR78thyDMNYJFECdgRlo_GULMgGZS0EumxrKbZFiOmnmAPChBPDZ5JP
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 12 Mar 2016 13:44:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '608'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - aid=M35-P8lJr6fZPVXMXQzimsaZoB33nGzJoXmfe_E-kBf4h6g2bIaqxoIrmz7OOzW3-7SJ23LTJjU;
+        Domain=jawbone.com; expires=Sat, 06 Mar 2021 00:00:00; Path=/
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIADod5FYC/52UW2+bMBTHv0rEcxtsY2yzt0nZtHSXbnlZlSpCJHjEC7di
+        0y2J+O6zDemAJOq0N/6c2+8cH/voZFxFzpvJ0aklr8LfItbCmcl6GUDv+f5u
+        NxeLO5HS+cPTW+dmot2ljBJunO4/mh+bIjYKAaCFEpkREPuUBgAR0uifcdRV
+        EIpnUn89Hq1jWJfaxONBgPbvGLJFtd3vHr7ffv2czJ7yH9Xids6WvD68/7aY
+        beAHx9ZTqWVBNx5CE6l4Kc1/mUel3BYqFFkH6+Z1nHDXape7tiCCBFD3tTou
+        2sqfNVgm6y94WuaJ0/UZbirewye+DzB+sRVZmfKelTECkBmGHrdIpZ1HtFHi
+        mYenoRHom/CDHdHjIOe7uipK7n4q8rjIndXKtGh6Db0oM6Far7MqjKO9UQGA
+        U8ZYQHxPG34VmqbOlbaAVqZFnnB5+qEDz4PWSbiJ0qIS3NBAH0yN67aoq3Qf
+        qkJFXQsI6Bl6EAJmZSykivJNuwOA2qBRlxCb/P3kEFs/kY88KTED62BDEacv
+        JorZaQLWEcGe4zCL71Gzgy+cdMyJvAuUYIiILgKCK3Sgx+ZdJwMDLjDmAq9j
+        wf/G+leqYEyFMbnAhSkaknne5SP1/Gt0BOIen0+Cq4T6pWmadpF7nWl1PgZZ
+        55WQJ9VfTkbbPtTBPA7D63VWuV2jEbjJAhgZnQgjU4SojzAhZkV39nZOdTVD
+        w42XDrYXHGEICYEBZqte40g/Y92d/Zv10ig9BljboeTqdG7mObUTao/P9Lcv
+        7fOXFbqNxlYSB8veNH8AnuMI9vwFAAA=
+    http_version: 
+  recorded_at: Sat, 12 Mar 2016 13:44:26 GMT
+recorded_with: VCR 3.0.1

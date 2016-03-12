@@ -10,6 +10,7 @@ module Rjawbone
             @details = Details.new(value)
           else
             instance_variable_set(:"@#{key}", value)
+            self.class.send(:attr_reader, key)
           end
         end
       end
@@ -17,7 +18,10 @@ module Rjawbone
       class Details 
 
         def initialize(data)
-          data.each {|k, v| instance_variable_set(:"@#{k}", v)}
+          data.each do |key, value| 
+            instance_variable_set(:"@#{key}", value)
+            self.class.send(:attr_reader, key)
+          end
         end
 
       end

@@ -1,6 +1,6 @@
 module Rjawbone
   module Model
-    class Moves < Base
+    class MoveList < Base
 
       attr_reader :moves
 

@@ -17,7 +17,7 @@ module Rjawbone
       class Details 
 
         def initialize(data)
-          data.each {|k, v| instance_variable_set(:"@#{key}", value)}
+          data.each {|k, v| instance_variable_set(:"@#{k}", v)}
         end
 
       end

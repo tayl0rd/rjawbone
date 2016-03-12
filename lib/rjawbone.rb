@@ -26,6 +26,6 @@ module Rjawbone
 
   class ConfigurationNotImplemented < StandardError; end
 
-  class BadToken < StandardError; end
+  class NoAccessToken < StandardError; end
 
 end

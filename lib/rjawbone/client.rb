@@ -11,10 +11,13 @@ module Rjawbone
     end
 
     def user_token?
-      access_token && refresh_token
+      !!(access_token && refresh_token)
     end
 
     def auth_header
+      unless access_token
+        raise Rjawbone::NoAccessToken.new("No access_token present in client")
+      end
       {"Authorization" => "Bearer #{access_token}"}
     end
 

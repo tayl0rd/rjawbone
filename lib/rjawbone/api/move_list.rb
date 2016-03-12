@@ -1,6 +1,6 @@
 module Rjawbone
   module API
-    module Moves
+    module MoveList
 
       include Rjawbone::Utils
 
@@ -9,7 +9,7 @@ module Rjawbone
       def move_list(params = {})
         perform_get_with_object(build_endpoint(MOVES, params),
                                 auth_header, 
-                                Rjawbone::Model::Moves)
+                                Rjawbone::Model::MoveList)
       end
 
     end

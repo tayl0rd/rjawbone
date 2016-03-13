@@ -8,7 +8,7 @@ module Rjawbone
     end
 
     def oauth_validated?
-      client_id && client_secret && callback_url && scope
+      !!(client_id && client_secret && callback_url && scope)
     end
   end
 end

@@ -3,25 +3,25 @@ module Rjawbone
 
     def check_oauth_config
       unless Rjawbone.configuration && Rjawbone.configuration.oauth_validated?
-        raise Rjawbone::ConfigurationNotImplemented, "Authorization config has not been set"
+        raise Rjawbone::ConfigurationNotImplemented.new "Authorization config has not been set"
       end
     end
 
-    def perform_get(url, headers = {})
+    def get(url, headers = {})
       RestClient.get(url, headers)
     end
 
-    def perform_post(url, payload, headers = {})
+    def post(url, payload, headers = {})
       RestClient.post(url, payload, headers)
     end
 
     def perform_get_with_object(url, headers, klass)
-      response = JSON.parse perform_get(url, headers)
+      response = JSON.parse get(url, headers)
       build_object(klass, response)
     end
 
     def perform_post_with_object(url, payload, headers = {}, klass)
-      response = JSON.parse perform_post(url, payload, headers)
+      response = JSON.parse post(url, payload, headers)
       build_object(klass, response)
     end
 

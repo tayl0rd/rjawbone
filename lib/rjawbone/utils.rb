@@ -17,12 +17,12 @@ module Rjawbone
 
     def perform_get_with_object(url, headers, klass)
       response = JSON.parse get(url, headers)
-      build_object(klass, response)
+      build_object(klass, response, self)
     end
 
     def perform_post_with_object(url, payload, headers = {}, klass)
       response = JSON.parse post(url, payload, headers)
-      build_object(klass, response)
+      build_object(klass, response, self)
     end
 
     def build_endpoint(base, params)
@@ -35,10 +35,8 @@ module Rjawbone
 
     private 
 
-    def build_object(klass, response)
-      klass = klass.new(response)
-      klass.client = self
-      klass
+    def build_object(klass, response, client = nil)
+      klass.new(response, client)
     end
 
   end

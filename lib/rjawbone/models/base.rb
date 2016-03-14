@@ -4,6 +4,10 @@ module Rjawbone
 
       attr_accessor :client
 
+      def initialize(client = nil)
+        @client = client
+      end
+
     end
   end
 end

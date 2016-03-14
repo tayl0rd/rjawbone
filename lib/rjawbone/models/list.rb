@@ -3,10 +3,11 @@ module Rjawbone
     class List < Base
       attr_reader :size, :next, :page_token, :user_xid
 
-      def initialize(response)
+      def initialize(response, client = nil)
+        super(client)
         @user_xid = response["meta"]["user_xid"]
         @size = response["data"]["size"]
-        if @size == 10
+        if @size == 10 && response["data"]["links"]
           next_link = response["data"]["links"]["next"]
           @next = Rjawbone::JAWBONE_URL + next_link 
           @page_token = parse_token(next_link)

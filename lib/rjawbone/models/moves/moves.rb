@@ -6,10 +6,10 @@ module Rjawbone
 
         include Enumerable
 
-        def initialize(response)
-          super(response)
+        def initialize(response, client = nil)
+          super(response, client)
           @moves = response["data"]["items"].map do |move|
-            Rjawbone::Model::Moves::Move.new(move)
+            Rjawbone::Model::Moves::Move.new(move, client)
           end
         end
 
@@ -24,26 +24,38 @@ module Rjawbone
 
       class Move < Rjawbone::Model::Item
 
+        def initialize(response, client = nil)
+          super(response, client)
+        end
+
+        def get_details(data)
+          Rjawbone::Model::Moves::Details.new(data)
+        end
+
+      end
+
+      class Ticks < Rjawbone::Model::List
+
         def initialize(response)
-          response.each do |key, value|
-            if key == "details"
-              @details = Rjawbone::Model::Moves::Details.new(value)
-            else
-              instance_variable_set(:"@#{key}", value)
-              self.class.send(:attr_reader, key)
-            end
-          end
+          super(response)
+        end
+
+      end
+
+      class Tick < Rjawbone::Model::Item
+
+        def initialize(response)
+          super(response)
         end
 
       end
 
       class Details < Rjawbone::Model::Details
-        def initialize(data)
-          data.each do |key, value| 
-            instance_variable_set(:"@#{key}", value)
-            self.class.send(:attr_reader, key)
-          end
+
+        def intialize(data)
+          super(data)
         end
+
       end
 
     end

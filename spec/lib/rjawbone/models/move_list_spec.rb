@@ -1,11 +1,11 @@
-describe Rjawbone::Model::MoveList, :vcr do 
+describe Rjawbone::Model::Moves::List, :vcr do 
   
   let(:client) { Rjawbone::Client.new(access_token: ENV['TOKEN'] || 'AT') }
   let(:move_list) { client.move_list }
 
   it 'returns the latest n moves of the user' do 
     expect(move_list.moves).to be_an Array
-    expect(move_list.moves.first).to be_a Rjawbone::Model::Move
+    expect(move_list.moves.first).to be_a Rjawbone::Model::Moves::Move
   end
 
   it 'returns the correct move based on the date' do 

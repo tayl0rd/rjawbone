@@ -1,8 +1,6 @@
 module Rjawbone
   module Model
-    class Base
-
-      attr_accessor :client
+    class Details < Base
 
     end
   end

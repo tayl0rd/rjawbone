@@ -1,14 +1,13 @@
 require "rjawbone/models/base"
+require "rjawbone/models/list"
+require "rjawbone/models/item"
+require "rjawbone/models/details"
 
-require "rjawbone/api/move_list"
-require "rjawbone/models/move_list"
-require "rjawbone/api/move"
-require "rjawbone/models/move"
+require "rjawbone/api/moves"
 
 module Rjawbone
   module API
-    include MoveList
-    include Move
+    include Moves
 
   end
 end

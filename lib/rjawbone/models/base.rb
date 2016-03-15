@@ -4,8 +4,8 @@ module Rjawbone
 
       attr_accessor :client
 
-      def initialize(client = nil)
-        @client = client
+      def initialize(response = {})
+        @client = response["client"] if response["client"]
       end
 
     end

@@ -25,7 +25,7 @@ module Rjawbone
       build_object(klass, response, self)
     end
 
-    def build_endpoint(base, params)
+    def build_endpoint(base, params = {})
       if params && !params.empty?
         query_params = URI.encode_www_form(params)
         base += "?#{query_params}"
@@ -36,7 +36,8 @@ module Rjawbone
     private 
 
     def build_object(klass, response, client = nil)
-      klass.new(response, client)
+      response.merge!({"client" => client})
+      klass.new(response)
     end
 
   end

@@ -4,8 +4,8 @@ module Rjawbone
 
       attr_reader :details
 
-      def initialize(response = {}, client = nil)
-        super(client)
+      def initialize(response = {})
+        super(response)
         response.each do |key, value|
           if key == "details"
             @details = get_details(value)

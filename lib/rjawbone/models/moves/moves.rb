@@ -6,10 +6,13 @@ module Rjawbone
 
         include Enumerable
 
-        def initialize(response, client = nil)
-          super(response, client)
-          @moves = response["data"]["items"].map do |move|
-            Rjawbone::Model::Moves::Move.new(move, client)
+        def initialize(response = {})
+          if response["data"] && response["meta"]
+            super(response)
+            @moves = response["data"]["items"].map do |move|
+              move.merge!({"client" => response["client"]})
+              Rjawbone::Model::Moves::Move.new(move)
+            end
           end
         end
 
@@ -24,20 +27,33 @@ module Rjawbone
 
       class Move < Rjawbone::Model::Item
 
-        def initialize(response, client = nil)
-          super(response, client)
+        def initialize(response)
+          super(response)
         end
 
         def get_details(data)
           Rjawbone::Model::Moves::Details.new(data)
         end
 
+        def ticks
+          client.move_ticks(self.xid)
+        end
+
       end
 
       class Ticks < Rjawbone::Model::List
+        attr_reader :ticks
+        include Enumerable
 
         def initialize(response)
           super(response)
+          @ticks = response["data"]["items"].map do |item|
+            Rjawbone::Model::Moves::Tick.new(item)
+          end
+        end
+
+        def each(&block)
+          ticks.each(&block)
         end
 
       end

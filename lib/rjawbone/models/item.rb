@@ -28,7 +28,7 @@ module Rjawbone
       private
 
       def get_ticks(endpoint)
-        client.get_object("#{endpoint}/#{xid}/ticks", Rjawbone::Model::List)
+        client.get_object("#{endpoint}/#{xid}/ticks", List)
       end
 
     end

@@ -22,7 +22,7 @@ module Rjawbone
       end
 
       def next_page
-        client.get_object(@next, Rjawbone::Model::List) if @next
+        client.get_object(@next, self.class) if @next
       end
 
       def each(&block)

@@ -1,4 +1,4 @@
-module Rjawbone
+module Jawbone
   module Rails
     module JawboneHelper
 

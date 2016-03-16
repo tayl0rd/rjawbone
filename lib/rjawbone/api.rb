@@ -9,6 +9,8 @@ require "rjawbone/api/sleeps"
 
 module Rjawbone
   module API
+
+    include Rjawbone::Utils
     include Moves
     include HeartRate
     include Sleeps

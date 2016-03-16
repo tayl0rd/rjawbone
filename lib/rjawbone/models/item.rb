@@ -8,16 +8,12 @@ module Rjawbone
         super(response)
         response.each do |key, value|
           if key == "details"
-            @details = get_details(value)
+            @details = Details.new(value)
           else
             instance_variable_set(:"@#{key}", value)
             self.class.send(:attr_reader, key)
           end
         end
-      end
-
-      def get_details(data)
-        raise NotImplementedError, "Subclass must override"
       end
 
     end

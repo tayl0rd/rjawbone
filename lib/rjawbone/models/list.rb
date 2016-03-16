@@ -14,30 +14,25 @@ module Rjawbone
         if response["data"]["links"]
           next_link = response["data"]["links"]["next"]
           @next = Rjawbone::JAWBONE_URL + next_link 
-          @page_token = parse_token(next_link)
         end
         @collection = response["data"]["items"].map do |item|
           item.merge!({"client" => response["client"]}) if response["client"]
-          get_collection(item)
+          Item.new(item)
         end
       end
 
       def next_page
-        client.move_list(page_token: @page_token)
+        if @next
+          client.perform_get_with_object(@next, 
+                                         client.auth_header,
+                                         Rjawbone::Model::List)
+        else
+          puts "No more pages."
+        end
       end
 
       def each(&block)
         collection.each(&block)
-      end
-
-      def get_collection
-        raise NotImplementedError, "Subclass must override"
-      end
-
-      private 
-
-      def parse_token(link)
-        %r{page_token=(\d+)}.match(link)[1]
       end
 
     end

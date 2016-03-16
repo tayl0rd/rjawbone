@@ -1,5 +1,6 @@
 module Rjawbone
   class Client
+
     include Rjawbone::API
 
     attr_accessor :access_token, :refresh_token

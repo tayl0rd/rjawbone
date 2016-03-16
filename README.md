@@ -3,7 +3,7 @@
 <dl>
   <dt>Homepage</dt><dd><a href="#">homepage</a></dd>
   <dt>Author</dt><dd><a href="">Taylor Daugherty</a></dd>
-  <dt>Documentation</dt><a href="#">Ruby Gems</a></dd>
+  <dt>Documentation</dt><dd><a href="#">Ruby Gems</a></dd>
 </dl>
 
 [![Build Status](https://travis-ci.org/tylrd/rjawbone.svg?branch=master)](https://travis-ci.org/tylrd/rjawbone)
@@ -14,13 +14,14 @@
 
 ## Installation
 
-```
+```ruby
 gem install rjawbone
 ```
 
+
 ## Configuration
 
-```
+```ruby
 Rjawbone.configure do |config|
   config.client_id = ENV['JAWBONE_CLIENT']
   config.client_secret = ENV['JAWBONE_SECRET']
@@ -31,11 +32,12 @@ end
 
 For a rails project, you can put this in `config/initializers/rjawbone.rb`.
 
+
 ## Authentication
 
 This gem provides two helper methods for following the OAuth 2.0 flow.
 
-```
+```ruby
 # Returns a url for your configured jawbone application
 Rjawbone::Oauth.authorization_url 
 
@@ -51,7 +53,7 @@ After obtaining an access token, you will need to persist it.
 
 The API calls are made by initializing a Rjawbone client object. 
 
-```
+```ruby
 Rjawbone::Client.new(access_token: ACCESS_TOKEN, refresh_token: REFRESH)
 
 # OR
@@ -66,7 +68,7 @@ After initializing the client object, you can retrieve any object allowed by you
 
 ## Resources
 
-```
+```ruby
 # Returns a Rjawbone::Model::List object
 list = client.move_list
 
@@ -81,4 +83,5 @@ list.select {|move| move.details.distance >= 5000}
 ```
 
 ## TODO
+
 

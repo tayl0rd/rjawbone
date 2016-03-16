@@ -9,6 +9,7 @@ require "rjawbone/utils"
 require "rjawbone/oauth"
 require "rjawbone/api"
 require "rjawbone/client"
+require "rjawbone/rails"
 
 module Rjawbone
 

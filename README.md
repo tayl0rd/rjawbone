@@ -54,6 +54,8 @@ After obtaining an access token, you will need to persist it.
 
 The API calls are made by initializing a Rjawbone client object. 
 
+The ACCESS_TOKEN is retrieved from the Authentication step.
+
 ```ruby
 Rjawbone::Client.new(access_token: ACCESS_TOKEN, refresh_token: REFRESH)
 
@@ -67,23 +69,60 @@ end
 
 After initializing the client object, you can retrieve any object allowed by your configured scope.
 
+
 ## Resources
+
+#### Lists
 
 ```ruby
 # Returns a Rjawbone::Model::List object
-list = client.move_list
+list = client.moves
 
-# The list object has methods that assist in retrieving information:
+# The list has a collection attribute, composed of Rjawbone::Model::Item objects
+# The list object has methods that assist in retrieving information
 
 # Pagination
 list.next_page
 
 # Enumerability
-list.map {|move| move.ticks}
+list.map {|move| move.xid }
 list.select {|move| move.details.distance >= 5000}
 ```
 
+#### Items
+
+```ruby
+# The item object has all the fields from the raw API response
+# When a "sleep" or "move" type, the Rjawbone::Model::Item can implement the #ticks method
+
+list = client.moves
+move = list.first
+
+# Returns a Rjawbone::Model::List of objects of "ticks"
+# The ticks associated with that move resource
+ticks = move.ticks
+
+# These ticks are a list, so include enumerablity and pagination methods
+ticks.reject {|tick| tick.steps <= 50}
+ticks = client.moves.map {|item| item.ticks}
+```
+
+#### Resources
+
+Implemented endpoints:
+- moves
+- sleeps
+- heartrates
+
 ## TODO
 
-
+- band_events
+- body_events
+- goals
+- meals
+- mood
+- settings
+- timezone
+- trends
+- friends
 

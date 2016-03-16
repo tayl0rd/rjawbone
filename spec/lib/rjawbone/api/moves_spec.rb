@@ -1,7 +1,7 @@
 describe Rjawbone::API::Moves, :vcr do 
 
   let(:client) { Rjawbone::Client.new(access_token: ENV['TOKEN']) }
-  let(:list) { client.move_list }
+  let(:list) { client.moves }
 
   describe '#move_list' do 
     it 'should return a list model' do 

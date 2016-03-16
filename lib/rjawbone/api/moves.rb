@@ -2,7 +2,7 @@ module Rjawbone
   module API
     module Moves
 
-      def move_list(params = {})
+      def moves(params = {})
         get_object(build_endpoint(Rjawbone::MOVES_USER, params), Rjawbone::Model::List)
       end
 

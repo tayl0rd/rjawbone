@@ -23,9 +23,7 @@ module Rjawbone
 
       def next_page
         if @next
-          client.perform_get_with_object(@next, 
-                                         client.auth_header,
-                                         Rjawbone::Model::List)
+          client.perform_get_with_object(@next, Rjawbone::Model::List, @type)
         else
           puts "No more pages."
         end

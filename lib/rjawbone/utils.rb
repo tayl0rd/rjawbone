@@ -15,28 +15,25 @@ module Rjawbone
       RestClient.post(url, payload, headers)
     end
 
-    def perform_get_with_object(url, headers, klass)
-      response = JSON.parse get(url, headers)
+    def get_object(url, klass)
+      response = JSON.parse get(url, auth_header)
       build_object(klass, response, self)
     end
 
-    def perform_post_with_object(url, payload, headers = {}, klass)
-      response = JSON.parse post(url, payload, headers)
+    def post_object(url, klass, payload)
+      response = JSON.parse post(url, payload, auth_header)
       build_object(klass, response, self)
     end
 
     def build_endpoint(base, params = {})
-      if params && !params.empty?
-        query_params = URI.encode_www_form(params)
-        base += "?#{query_params}"
-      end
+      base += "?#{URI.encode_www_form(params)}" if params && !params.empty?
       base
     end
 
     private 
 
     def build_object(klass, response, client = nil)
-      response.merge!({"client" => client})
+      response.merge!({"client" => client}) if client
       klass.new(response)
     end
 

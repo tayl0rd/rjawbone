@@ -16,6 +16,21 @@ module Rjawbone
         end
       end
 
+      def ticks
+        case type
+        when "move"
+          get_ticks(Rjawbone::MOVES_ENDPOINT)
+        when "sleep"
+          get_ticks(Rjawbone::SLEEPS_ENDPOINT)
+        end
+      end
+
+      private
+
+      def get_ticks(endpoint)
+        client.get_object("#{endpoint}/#{xid}/ticks", Rjawbone::Model::List)
+      end
+
     end
   end
 end

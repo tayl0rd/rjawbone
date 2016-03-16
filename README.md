@@ -69,7 +69,6 @@ end
 
 After initializing the client object, you can retrieve any object allowed by your configured scope.
 
-
 ## Resources
 
 #### Lists
@@ -114,6 +113,15 @@ Implemented endpoints:
 - sleeps
 - heartrates
 
+## Rails
+
+There is Rails helper for generating the authorization url. If you are in a rails view:
+
+```ruby
+# jawbone_url generates the correct OAuth url.
+<%= link_to "Login with Jawbone", jawbone_url %>
+```
+
 ## TODO
 
 - band_events
@@ -125,5 +133,6 @@ Implemented endpoints:
 - timezone
 - trends
 - friends
+
 
 

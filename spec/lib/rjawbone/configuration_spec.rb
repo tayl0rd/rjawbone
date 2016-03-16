@@ -13,7 +13,7 @@ describe Rjawbone::Configuration do
       config = Rjawbone::Configuration.new
       config.client_id = "client"
       config.client_secret = "secret"
-      config.callback_url = "callback"
+      config.redirect_uri = "callback"
       config.scope = ["basic_read"]
       expect(config.oauth_validated?).to be true
     end
@@ -22,7 +22,7 @@ describe Rjawbone::Configuration do
       config = Rjawbone::Configuration.new
       config.client_id = "client"
       config.client_secret = "secret"
-      config.callback_url = "callback"
+      config.redirect_uri = "callback"
       expect(config.oauth_validated?).to be false
     end
   end

@@ -22,9 +22,12 @@ module Rjawbone
 
   # Two constants are created for every endpoint:
   # NAME_USER and NAME_ENDPOINT
+  #
+  # NAME_USER has the /users/@me syntax
+  # NAME_ENDPOINT has just the base_endpoint syntax
   ENDPOINTS.each do |sym|
-    const_set("#{sym.to_s.upcase}_USER", "#{USER_ENDPOINT}/#{sym.to_s}" )
-    const_set("#{sym.to_s.upcase}_ENDPOINT", "#{BASE_ENDPOINT}/#{sym.to_s}")
+    const_set("#{sym.upcase}_USER", "#{USER_ENDPOINT}/#{sym}" )
+    const_set("#{sym.upcase}_ENDPOINT", "#{BASE_ENDPOINT}/#{sym}")
   end
 
   # Authentication endpoints

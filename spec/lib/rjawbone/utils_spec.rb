@@ -13,7 +13,7 @@ describe Rjawbone::Utils do
         config.client_id = "3948230"
         config.client_secret = "123812903"
         config.scope = ["test"]
-        config.callback_url = "test"
+        config.redirect_uri = "test"
       end
       object = included_class.new
       expect(object.check_oauth_config).to be_nil

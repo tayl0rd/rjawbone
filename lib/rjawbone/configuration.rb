@@ -1,6 +1,6 @@
 module Rjawbone
   class Configuration
-    attr_accessor :client_id, :client_secret, :callback_url
+    attr_accessor :client_id, :client_secret, :redirect_uri
     attr_reader :scope
 
     def scope=(scopes)
@@ -8,7 +8,7 @@ module Rjawbone
     end
 
     def oauth_validated?
-      !!(client_id && client_secret && callback_url && scope)
+      !!(client_id && client_secret && redirect_uri && scope)
     end
   end
 end

@@ -33,7 +33,7 @@ describe Rjawbone do
       configuration = Rjawbone::Configuration.new
       configuration.client_id = "9234802"
       configuration.client_secret = "349283"
-      configuration.callback_url = "349203409"
+      configuration.redirect_uri = "349203409"
 
       Rjawbone.configuration = configuration
 
@@ -41,7 +41,7 @@ describe Rjawbone do
 
       expect(Rjawbone.configuration.client_id).to be_nil
       expect(Rjawbone.configuration.client_secret).to be_nil
-      expect(Rjawbone.configuration.callback_url).to be_nil
+      expect(Rjawbone.configuration.redirect_uri).to be_nil
 
     end
   end

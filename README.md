@@ -33,7 +33,6 @@ end
 
 For a rails project, you can put this in `config/initializers/rjawbone.rb`.
 
-
 ## Authentication
 
 This gem provides two helper methods for following the OAuth 2.0 flow.
@@ -50,18 +49,19 @@ After obtaining an access token, you will need to persist it.
 
 [Here](https://jawbone.com/up/developer/authentication) you can read about the authorization flow.
 
+
 ## Client
 
-The API calls are made by initializing a Rjawbone client object. 
+API calls are made by initializing a Rjawbone client object. 
 
-The ACCESS_TOKEN is retrieved from the Authentication step.
+The `ACCESS_TOKEN` is retrieved from the Authentication step.
 
 ```ruby
-Rjawbone::Client.new(access_token: ACCESS_TOKEN, refresh_token: REFRESH)
+client = Rjawbone::Client.new(access_token: ACCESS_TOKEN, refresh_token: REFRESH)
 
 # OR
 
-Rjawbone::Client.new do |config|
+client = Rjawbone::Client.new do |config|
   config.access_token = TOKEN
   config.refresh_token = REFRESH
 end
@@ -133,6 +133,3 @@ There is Rails helper for generating the authorization url. If you are in a rail
 - timezone
 - trends
 - friends
-
-
-

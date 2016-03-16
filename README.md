@@ -6,6 +6,7 @@
   <dt>Documentation</dt><dd><a href="#">Ruby Gems</a></dd>
 </dl>
 
+[![Gem Version](https://badge.fury.io/rb/rjawbone.svg)](https://badge.fury.io/rb/rjawbone)
 [![Build Status](https://travis-ci.org/tylrd/rjawbone.svg?branch=master)](https://travis-ci.org/tylrd/rjawbone)
 [![Code Climate](https://codeclimate.com/github/tylrd/rjawbone/badges/gpa.svg)](https://codeclimate.com/github/tylrd/rjawbone)
 [![Test Coverage](https://codeclimate.com/github/tylrd/rjawbone/badges/coverage.svg)](https://codeclimate.com/github/tylrd/rjawbone/coverage)
@@ -83,5 +84,6 @@ list.select {|move| move.details.distance >= 5000}
 ```
 
 ## TODO
+
 
 

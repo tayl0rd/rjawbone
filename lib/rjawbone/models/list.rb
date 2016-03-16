@@ -22,11 +22,7 @@ module Rjawbone
       end
 
       def next_page
-        if @next
-          client.perform_get_with_object(@next, Rjawbone::Model::List, @type)
-        else
-          puts "No more pages."
-        end
+        client.get_object(@next, Rjawbone::Model::List) if @next
       end
 
       def each(&block)

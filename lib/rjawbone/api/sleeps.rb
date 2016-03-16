@@ -3,7 +3,7 @@ module Rjawbone
     module Sleeps
 
       def sleep_list
-        get_object(Rjawbone::SLEEPS_USER, Rjawbone::Model::List, :sleeps)
+        get_object(Rjawbone::SLEEPS_USER, Rjawbone::Model::List)
       end
 
     end

@@ -24,6 +24,10 @@ module Rjawbone
     yield configuration if block_given?
   end
 
+  def self.clear_config
+    @configuration = nil
+  end
+
   class ConfigurationNotImplemented < StandardError; end
 
   class NoAccessToken < StandardError; end
